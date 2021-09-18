@@ -13,6 +13,69 @@ body {
 	background-size: contain;
 }
 
+	#heroSection {
+		/*background-image: url(images/image-mockups.png),url(images/bg-intro-mobile.svg);
+	    background-position-x: 40em;
+	    background-size: auto;
+	    background-repeat: no-repeat;
+	    background-position-y: -30px;
+	    background-position: center;
+	    height: 46.5em;*/
+	}
+
 button	{
 	/*background-image: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));*/
 }
+
+@media (min-width: 768px) {
+	.backGee {
+		/*background-image: url();*/
+	}
+
+	#heroSection {
+		background-image: url(images/image-mockups.png),url(images/bg-intro-desktop.svg);
+    /*background-position-x: 40em;*/
+    background-size: 55.5vw;
+    background-repeat: no-repeat;
+    /*background-position-y: -30px;*/
+    height: 39.6em;
+    background-position: 53vw 5.55vw;
+    z-index: 45;	
+	}
+
+	.heroImg{
+		display: none;
+	}
+
+	.heroContent{
+		width: 45vw;
+	}
+
+	.backGee {
+	background-image: none;
+	}
+}
+
+@media (min-width: 1024px) {
+	#heroSection{
+		background-position: 53vw -1.45vw;
+		height: 63.5vw;
+	}
+
+	.social-icon a img :hover{
+		color: green;
+	}
+
+	.losty :hover{
+		color: #68ae97 !important;
+	}
+}
+
+@media (min-width:1280px) {
+	#heroSection{
+		background-size: 52.5vw;
+		background-position: 54vw -5.45vw;
+	}
+}
+
+/*style="background-image: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%))*/
