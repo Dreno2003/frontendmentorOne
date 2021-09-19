@@ -13,19 +13,16 @@ body {
 	background-size: contain;
 }
 
-	#heroSection {
-		/*background-image: url(images/image-mockups.png),url(images/bg-intro-mobile.svg);
-	    background-position-x: 40em;
-	    background-size: auto;
-	    background-repeat: no-repeat;
-	    background-position-y: -30px;
-	    background-position: center;
-	    height: 46.5em;*/
-	}
-
-button	{
-	/*background-image: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));*/
+.invite-btns:hover {
+	background-image: linear-gradient(to right, hsl(161deg 65% 74%), hsl(172deg 71% 63%)) !important;
 }
+
+
+svg :hover{
+	fill: #47cfc3 !important;
+}
+
+
 
 @media (min-width: 768px) {
 	.backGee {
@@ -62,13 +59,18 @@ button	{
 		height: 63.5vw;
 	}
 
-	.social-icon a img :hover{
+	/*.social-icon a img :hover{
 		color: green;
 	}
-
+*/
 	.losty :hover{
-		color: #68ae97 !important;
+		color: #47cfc3 !important;
 	}
+
+/*	.lostyo a svg path :hover{
+		color:#68ae97 !important ;
+	}
+*/
 }
 
 @media (min-width:1280px) {
@@ -79,3 +81,5 @@ button	{
 }
 
 /*style="background-image: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%))*/
+
+/*#84e1aa #81d6dd*/
