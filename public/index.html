@@ -10,32 +10,29 @@
 </head>
 
 <body>
-		<header id="header" class="bg-white fixed w-full top-0 px-16 py-6 " style="border-bottom: 2px solid cyan; z-index: 60;" >
-			
-				<div class="flex justify-between items-center ">
+		<header id="header" class="bg-white justify-between flex items-center fixed w-full top-0 px-16 lg:px-32 py-6 " style="border-bottom: 2px solid cyan; z-index: 60;" >
+		
 					<a href="index.html"><img src="images/logo.svg" height="95" width="95"></a>
-					<img src="images/icon-hamburger.svg" height="37" width="28" alt="" class="lg:hidden">
-					<div class="hidden lg:block">
-					<ol class="inline-flex list-none text-gray-500">
-						<li class="mr-5 cursor-pointer"><a href="#">Home</a></li>
-						<li class="mr-5 cursor-pointer"><a href="#">About</a></li>
-						<li class="mr-5 cursor-pointer"><a href="#">Contact</a></li>
-						<li class="mr-5 cursor-pointer"><a href="#">Blog</a></li>
-						<li class=" cursor-pointer"><a href="#">Carrers</a></li> 
+					<img src="images/icon-hamburger.svg" id="openBtn" onclick="openModal()" height="37" width="28" alt="" class="lg:hidden">
+					<img src="images/icon-close.svg" class="hidden icon-close absolute lg:hidden" id="closeBtn" onclick="closeModal()" alt="">
+					<div class="hidden rounded-xl modalWrappar lg:block  bg-white" style="box-shadow: #80808061 0px 3px 5px 1px" id="navContent"> 
+					<ol class="block mxp text-center my-8 lg:my-0 bg-white lg:static lg:inline-flex list-none text-gray-500">
+						<li class="mb-2 font-semibold lg:font-normal lg:mr-5 cursor-pointer"><a href="#">Home</a></li>
+						<li class="mb-2 font-semibold lg:font-normal lg:mr-5 cursor-pointer"><a href="#">About</a></li>
+						<li class="mb-2 font-semibold lg:font-normal lg:mr-5 cursor-pointer"><a href="#">Contact</a></li>
+						<li class="mb-2 font-semibold lg:font-normal lg:mr-5 cursor-pointer"><a href="#">Blog</a></li>
+						<li class=" font-semibold lg:font-normal cursor-pointer"><a href="#">Carrers</a></li> 
 					</ol>
 				</div>
-
+			
 				<button	class="text-white invite-btns cursor-pointer text-center md:mb-34 hidden lg:block font-semibold rounded-3xl py-3 px-6 text-sm" style="background-image:
-		linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%))">
-		Request Invite </button>
-
+				linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%))">
+				Request Invite
+			</button>
 				</div>
-
-			
-			
 		</header> 
 
-		<section id="heroSection" class="backGee md:relative px-4  sm:px-8 lg:px-16">
+		<section id="heroSection" class="backGee md:relative px-4 lg:pl-32 sm:px-8 lg:px-16">
 			<div class="container">
 			<img	src="images/image-mockups.png" class="px-3 md:hidden" alt="">
 		 <div id="heroContent" class="text-center md:text-left md:pt-36 mt-1"> 
@@ -90,7 +87,7 @@
 
 					</div>
 
-						<div id="fastBording " class="my-6 md:mt-5 md:px-3 lg:w-3/12 md:w-1/2">
+						<div id="fastBording " class="my-6 md:mt-5 lg:mt-0 md:px-3 lg:w-3/12 md:w-1/2">
 						<div class="flex mb-3 justify-center items-center md:block flex-col">
 							<img src="images/icon-onboarding.svg" height="150" width="75" alt="">
 							<h5 class="text-gray-600 text-lg font-normal mt-3">Fast Onboarding</h5>
@@ -111,9 +108,7 @@
 						<div class="text-gray-400 text-center md:text-left">
 							Our modern web and mobile application allow you to keep track of your finances wherever you are in the world.
 						</div>
-
 					</div>
-
 				</div>
 
 			</div>
@@ -126,7 +121,7 @@
 				<div class="arti-wrapper flex flex-col justify-center items-center md:flex-row flex-wrap">
 						
 					<div class="art-1 md:w-1/2 lg:w-3/12 px-4 mt-10 ">
-							<img src='images/image-restaurant.jpg' class="rounded-t-md" alt="currency Image">
+							<img src='images/currency-img.jpg' class="rounded-t-md curren" alt="currency Image">
 
 							<div class="bg-white px-4 py-6 rounded-b-md shadow-md">
 								<h5 class="text-gray-400">By Clare Redinton</h5>
@@ -151,7 +146,6 @@
 
 					<div class="art-3 md:w-1/2 lg:w-3/12 px-4 mt-10">
 							<img src="images/image-plane.jpg" class="rounded-t-md" alt="currency Image">
-
 							<div class="bg-white px-4 py-6 rounded-b-md shadow-md">
 								<h5 class="text-gray-400">By Clare Redinton</h5>
 								<h3 class="text-gray-700 text-lg my-3 losty" ><a href="">Receive money in any currency with no fees.</a></h3>
@@ -160,7 +154,6 @@
 								</div>
 							</div>
 					</div>
-
 
 					<div class="art-4 md:w-1/2 lg:w-3/12 px-4 mt-10">
 							<img src="images/image-confetti.jpg" class="rounded-t-md" alt="currency Image">
@@ -173,7 +166,6 @@
 								</div>
 							</div>
 					</div>
-
 				</div>
 			</div>
 		</section>
@@ -239,5 +231,39 @@
 			</div>
 		</footer>
 
+		<script >
+			
+			var btn = document.getElementById("openBtn"); //btn to open modal
+			var navContents = document.getElementById("navContent"); //navigation content
+			var closeBtn = document.getElementById("closeBtn");
+
+			btn.onclick = function openModal() {
+				navContents.style.display = 'block';
+				btn.style.display = 'none';
+				closeBtn.style.display='block';
+
+			}
+
+			closeBtn.onclick = function closeModal() {
+				navContents.style.display = 'none';
+				closeBtn.style.display='none';
+				btn.style.display='block';
+			}
+
+			// window.onclick = function(event) {
+			// 	if (event.target == navContents) {
+			// 		navContents.style.display="none";
+			// 		console.log('man')
+			// 	}
+			// }
+
+			window.addEventListener("click", function(event){
+				var navContents = document.getElementById("navContent");
+				if (event.target == navContents) {
+					navContents.style.display="none"
+				}
+			})
+
+		</script>
 </body>
 </html>
